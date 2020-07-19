@@ -1,95 +1,203 @@
-<?php
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package HemerkenGT
- */
+<?php get_header(); ?>
 
-get_header();
-?>
+	<div id="primary" class="content-area clear col-md-8">
 
-<div id="primary" class="content-area col-md-8 clear">
+		<?php if (get_theme_mod('top-section-on', 'true') == true ) { ?>
 
 		<div id="home-welcome" class="clear">
 
 		<div id="featured-content">
 
-		<?php
+		<?php		
 
 			$args = array(
-				'post_type'      => 'post',
-				'posts_per_page' => 7,
-				'meta_query' => array(
-					array(
-						'key'   => 'is_featured',
-						'value' => 'true'
-						)
-					)				
-				);
+			'post_type'      => 'post',
+			'posts_per_page' => 7,
+		    'meta_query' => array(
+		        array(
+		            'key'   => 'is_featured',
+		            'value' => 'true'
+		        	)
+		    	)				
+			);
 
-				// The Query
-				$the_query = new WP_Query( $args );
+			// The Query
+			$the_query = new WP_Query( $args );
 
-				$i = 1;
+			$i = 1;
 
-			if ( $the_query->have_posts() && (!get_query_var('paged')) ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+			if ( $the_query->have_posts() && (!get_query_var('paged')) ) {	
 
-			/* Start the Loop */
-			while ( $the_query->have_posts() ) :
-				$the_query->the_post();
-
-				
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
 		?>
-				<?php
+			
+
+			<?php
+				// The Loop
+				while ( $the_query->have_posts() ) : $the_query->the_post();
+			?>	
+
+
+			<?php if ($i <= 4) { ?>
+
+			<?php if ($i == 1) { ?>
+				<ul class="bxslider">
+			<?php } ?>
+
+			<li class="featured-slide hentry">
+
+					<a class="thumbnail-link" href="<?php the_permalink(); ?>">
+
+						<span class="gradient"></span>
+						
+						<div class="thumbnail-wrap">
+							<?php 
+							if ( has_post_thumbnail() ) {
+								the_post_thumbnail('featured_large_thumb');  
+							} else {
+								echo '<img src="' . get_template_directory_uri() . '/assets/img/no-featured.png" alt="" />';
+							}
+							?>
+						</div><!-- .thumbnail-wrap -->
+					</a>
+
+				<div class="entry-header clear">
+					<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				</div><!-- .entry-header -->
+
+			</li><!-- .featured-slide .hentry -->
+
+			<?php
+
+				if ( ( ( $i == $the_query->post_count ) && ( $the_query->post_count <= 4 ) ) || ( ( $i == 4 )  && ( $the_query->post_count > 4 ) ) ) {
+
+			?>
+
+				</ul><!-- .bxslider -->
+
+			<?php } ?>
+			
+
+			<?php } else { ?>
+
+			<div class="featured-square hentry <?php echo( $the_query->current_post + 1 === $the_query->post_count ) ? 'last' : ''; ?>">
+
+				<?php if ( has_post_thumbnail() ) { ?>
+					<a class="thumbnail-link" href="<?php the_permalink(); ?>">
+						<div class="thumbnail-wrap">
+							<?php 
+								the_post_thumbnail('post_thumb');  
+							?>
+						</div><!-- .thumbnail-wrap -->
+					</a>
+				<?php } ?>
+
+				<div class="entry-header">
+					<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				</div><!-- .entry-header -->
+
+			</div><!-- .hentry -->
+
+
+			<?php
+
+				}
 				$i++;
 				endwhile;
 			?>
+			<?php
+				} elseif  ( !$the_query->have_posts() && (!get_query_var('paged')) ) { // else has no featured posts
+			?>
+				<div class="notice">
+					<p><?php echo __('Please edit posts and set "Featured Posts" for this section.', 'newsnow-pro'); ?></p>
+					<p><a href="<?php echo home_url(); ?>/wp-admin/edit.php"><?php echo __('Okay, I\'m doing now &raquo;', 'newsnow-pro'); ?></a> | <a href="<?php echo get_template_directory_uri(); ?>/assets/img/how-to-featured.png" target="_blank"><?php echo __('How To &raquo;', 'newsnow-pro'); ?></a></p>
+				</div>
 
-				
-	
+			<?php
+				} //end if has featured posts
+				wp_reset_postdata();				
+			?>
+
+				<div class="ribbon"><span><?php echo esc_html('Featured', 'hemerken'); ?></span></div>
+
+			</div><!-- #featured-content -->
+
+		<?php		
+
+			$args = array(
+			'post_type'      => 'post',
+			'posts_per_page' => get_theme_mod('latest-posts-num', '5')+1			
+			);
+
+			// The Query
+			$the_query = new WP_Query( $args );
+
+			$i = 1;
+
+			if ( $the_query->have_posts() && (!get_query_var('paged')) ) :	
+
+		?>
+
+			<div id="latest-content">
+				<h3><?php esc_html_e('Latest News', 'hemerken'); ?></h3>
+
+					<?php
+						// The Loop
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+
+					?>	
+
+					<div class="latest-square hentry <?php echo( $the_query->current_post + 1 === $the_query->post_count ) ? 'last' : ''; ?>">
+
+						<div class="entry-header clear">
+							<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+						</div><!-- .entry-header -->
+
+					</div><!-- .hentry -->
+
+					<?php
+						$i++;
+						endwhile;
+					?>
+
+					<div class="more-button">
+						<a class="btn" href="<?php echo get_theme_mod('all-posts-url', home_url() . '/latest/'); ?>"><?php esc_html_e('View More News', 'hemerken'); ?></a>
+					</div>
+
+			</div><!-- #latest-content -->
+
+		<?php
+			endif;
+			wp_reset_postdata();
+		?>					
+
+		</div><!-- #home-welcome -->
+
+		<?php } //end if display top content ?>
 
 		<main id="main" class="site-main clear">
 
-<div id="recent-content">
+			<div id="recent-content">
 
-<?php if ( is_active_sidebar( 'homepage' ) ) { ?>
+			<?php if ( is_active_sidebar( 'homepage' ) ) { ?>
 
-	<?php dynamic_sidebar( 'homepage' ); ?>
+				<?php dynamic_sidebar( 'homepage' ); ?>
 
-<?php } else { ?>
+			<?php } else { ?>
 
-	<div class="notice">
-		<p><?php echo __('Put the "Home One/Two/Three Columns" widgets to the <strong>Homepage Content</strong> widget area.', 'hemerken-gt'); ?></p>
-		<p><a href="<?php echo home_url(); ?>/wp-admin/widgets.php"><?php echo __('Ok, I\'m doing now &raquo;', 'hemerken-gt'); ?></a>  | <a href="<?php echo get_template_directory_uri(); ?>/assets/img/how-to-home-widgets.png" target="_blank"><?php echo __('How To &raquo;', 'hemerken-gt'); ?></a></p>
-	</div>
+				<div class="notice">
+					<p><?php echo __('Put the "Home One/Two/Three Columns" widgets to the <strong>Homepage Content</strong> widget area.', 'hemerken'); ?></p>
+					<p><a href="<?php echo home_url(); ?>/wp-admin/widgets.php"><?php echo __('Okay, I\'m doing now &raquo;', 'hemerken'); ?></a>  | <a href="<?php echo get_template_directory_uri(); ?>/assets/img/how-to-home-widgets.png" target="_blank"><?php echo __('How To &raquo;', 'hemerken'); ?></a></p>
+				</div>
 
-<?php } ?>							
+			<?php } ?>							
+			
+			</div><!-- #recent-content -->		
 
-</div><!-- #recent-content -->		
+		</main><!-- .site-main -->
 
-		</main><!-- #main -->
+	</div><!-- #primary -->
 
-		</div><!-- #primary -->
-
-<?php get_template_part('sidebar', 'home'); ?>
+<div class="col-md-4">
+	<?php get_template_part('sidebar', 'home'); ?>
+</div>	
 <?php get_footer(); ?>

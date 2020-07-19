@@ -5,7 +5,7 @@
 		echo '<h3 class="section-title"><a href="' . esc_url( $cat_link ) . '">' . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . '</a></h3>';
 		echo '<span class="section-more-link"><a href="' . esc_url( $cat_link ) . '">more</a></span>';							
 	} elseif ( $cat_id == 0 ) {
-		echo '<h3 class="section-title">' . __( 'Latest Posts', 'hemerken-gt' ) . '</h3>';
+		echo '<h3 class="section-title">' . __( 'Latest Posts', 'hemerken' ) . '</h3>';
 	} else {
 		echo '<h3 class="section-title"><a href="' . esc_url( $cat_link ) . '">' . esc_attr( $category->name ) . '</a></h3>';
 		echo '<span class="section-more-link"><a href="' . esc_url( $cat_link ) . '">more</a></span>';

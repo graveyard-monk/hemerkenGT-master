@@ -27,7 +27,7 @@ if ( ! function_exists( 'hemerken_gt_setup' ) ) :
 		 * If you're building a theme based on hemerken_gtGT, use a find and replace
 		 * to change 'hemerken_gt' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'hemerken-gt', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'hemerken', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,9 +50,9 @@ if ( ! function_exists( 'hemerken_gt_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'primary' => esc_html__( 'Primary', 'hemerken-gt' ),
-				'secondary' => esc_html__( 'Secondary Menu', 'hemerken-gt' ),
-				'footer' => esc_html__( 'Footer Menu', 'hemerken-gt' ),
+				'primary' => esc_html__( 'Primary', 'hemerken' ),
+				'secondary' => esc_html__( 'Secondary Menu', 'hemerken' ),
+				'footer' => esc_html__( 'Footer Menu', 'hemerken' ),
 			)
 		);
 
@@ -138,104 +138,6 @@ function hemerken_gt_content_width() {
 }
 add_action( 'after_setup_theme', 'hemerken_gt_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function hemerken_gt_sidebar_init() {
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'hemerken-gt' ),
-		'id'            => 'right-sidebar',
-		'description'   => esc_html__( 'Add widgets here. Display on every pages.', 'hemerken-gt' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title"><span>',
-		'after_title'   => '</span></h2>',
-		) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Homepage Content', 'hemerken-gt' ),
-		'id'            => 'homepage',
-		'description'   => esc_html__( 'Only put "Home One/Two/Three Columns" and "Advertisement" widgets here.', 'hemerken-gt' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title"><span>',
-		'after_title'   => '</span></h2>',
-		) );
-	
-	register_sidebar( array(
-		'name'          => esc_html__( 'Homepage Sidebar', 'hemerken-gt' ),
-		'id'            => 'homepage-sidebar',
-		'description'   => esc_html__( 'If empty, homepage sidebar will display the "Sidebar" widgets above.', 'hemerken-gt' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title"><span>',
-		'after_title'   => '</span></h2>',
-		) );
-	
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column 1', 'hemerken-gt' ),
-		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'hemerken-gt' ),
-		'before_widget' => '<div id="%1$s" class="widget footer-widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title"><span>',
-		'after_title'   => '</span></h3>',
-		) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column 2', 'hemerken-gt' ),
-		'id'            => 'footer-2',
-		'description'   => esc_html__( 'Add widgets here.', 'hemerken-gt' ),
-		'before_widget' => '<div id="%1$s" class="widget footer-widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title"><span>',
-		'after_title'   => '</span></h3>',
-		) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column 3', 'hemerken-gt' ),
-		'id'            => 'footer-3',
-		'description'   => esc_html__( 'Add widgets here.', 'hemerken-gt' ),
-		'before_widget' => '<div id="%1$s" class="widget footer-widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title"><span>',
-		'after_title'   => '</span></h3>',
-		) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column 4', 'hemerken-gt' ),
-		'id'            => 'footer-4',
-		'description'   => esc_html__( 'Add widgets here.', 'hemerken-gt' ),
-		'before_widget' => '<div id="%1$s" class="widget footer-widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title"></span>',
-		'after_title'   => '</span></h3>',
-		) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Header Advertisement', 'hemerken-gt' ),
-		'id'            => 'header-ad',
-		'description'   => esc_html__( 'Drag the "Advertisement" widget here.', 'hemerken-gt' ),
-		'before_widget' => '<div id="%1$s" class="header-ad %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title"><span>',
-		'after_title'   => '</span></h3>',
-		) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Content Advertisement', 'hemerken-gt' ),
-		'id'            => 'content-ad',
-		'description'   => esc_html__( 'Drag the "Advertisement" widget here. Will display on archives page and single post bottom.', 'newsnow-gt' ),
-		'before_widget' => '<div id="%1$s" class="content-ad %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title"><span>',
-		'after_title'   => '</span></h3>',
-		) );
-}
-add_action( 'widgets_init', 'hemerken_gt_sidebar_init' );
 
 /**
  * Enqueue scripts and styles.

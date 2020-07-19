@@ -40,12 +40,12 @@
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'hemerken-gt' ), array( 'span' => array( 'class' => array() ) ) ),
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'hemerken' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hemerken-gt' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hemerken' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -59,7 +59,7 @@
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'hemerken-gt' ),
+					esc_html__( 'Edit %s', 'hemerken' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
 				'<span class="edit-link">',
@@ -109,7 +109,7 @@
 	if ( $related->have_posts() ) : $i = 1; ?>
 
 		<div class="entry-related clear">
-			<h3><?php esc_html_e('Recommended For You', 'hemerken-gt'); ?></h3>
+			<h3><?php esc_html_e('Recommended For You', 'hemerken'); ?></h3>
 			<div class="related-loop clear">
 				<?php while ( $related->have_posts() ) : $related->the_post(); ?>
 					<?php
@@ -144,7 +144,7 @@
 <div class="author-box clear">
 	<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php echo get_avatar( get_the_author_meta( 'ID' ), 120 ); ?></a>
 	<div class="author-meta">	
-		<h4 class="author-name"><?php echo __('About the Author:', 'hemerken-gt'); ?> <span><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author_meta('display_name'); ?></a></span></h4>	
+		<h4 class="author-name"><?php echo __('About the Author:', 'hemerken'); ?> <span><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author_meta('display_name'); ?></a></span></h4>	
 		<div class="author-desc">
 			<?php 
 				echo the_author_meta('description'); 

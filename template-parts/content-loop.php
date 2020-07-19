@@ -26,7 +26,7 @@
 		
 	<div class="entry-summary">
 		<?php echo hemerken_gt_custom_excerpt( get_theme_mod('archive-excerpt-length','33') ); ?>
-		<span><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read more &raquo;', 'hemerken-gt'); ?></a></span>
+		<span><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read more &raquo;', 'hemerken'); ?></a></span>
 	</div><!-- .entry-summary -->
 
 </div><!-- #post-<?php the_ID(); ?> -->

@@ -20,13 +20,13 @@ class hemerken_gt_Block_Three_Widget extends WP_Widget {
 		// Set up the widget options.
 		$widget_options = array(
 			'classname'   => 'widget-hemerken_gt-home-three-columns',
-			'description' => __( 'Display three-column post blocks. Only use for the "Homepage Content" widget area.', 'hemerken-gt' )
+			'description' => __( 'Display three-column post blocks. Only use for the "Homepage Content" widget area.', 'hemerken' )
 		);
 
 		// Create the widget.
 		parent::__construct(
 			'goblin-home-three-columns',         // $this->id_base
-			__( '&raquo; Home Three Columns', 'hemerken-gt' ), // $this->name
+			__( '&raquo; Home Three Columns', 'hemerken' ), // $this->name
 			$widget_options                    // $this->widget_options
 		);
 	}
@@ -93,10 +93,10 @@ class hemerken_gt_Block_Three_Widget extends WP_Widget {
 	?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Choose category for column #1', 'hemerken-gt' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Choose category for column #1', 'hemerken' ); ?></label>
 			<select class="widefat" id="<?php echo $this->get_field_id( 'cat' ); ?>" name="<?php echo $this->get_field_name( 'cat' ); ?>" style="width:100%;">
 				<?php $categories = get_terms( 'category' ); ?>
-				<option value="0"><?php _e( 'All categories &hellip;', 'hemerken-gt' ); ?></option>
+				<option value="0"><?php _e( 'All categories &hellip;', 'hemerken' ); ?></option>
 				<?php foreach( $categories as $category ) { ?>
 					<option value="<?php echo esc_attr( $category->term_id ); ?>" <?php selected( $instance['cat'], $category->term_id ); ?>><?php echo esc_html( $category->name ); ?></option>
 				<?php } ?>
@@ -104,10 +104,10 @@ class hemerken_gt_Block_Three_Widget extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'cat_2' ); ?>"><?php _e( 'Choose category for column #2', 'hemerken-gt' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'cat_2' ); ?>"><?php _e( 'Choose category for column #2', 'hemerken' ); ?></label>
 			<select class="widefat" id="<?php echo $this->get_field_id( 'cat_2' ); ?>" name="<?php echo $this->get_field_name( 'cat_2' ); ?>" style="width:100%;">
 				<?php $categories_2 = get_terms( 'category' ); ?>
-				<option value="0"><?php _e( 'All categories &hellip;', 'hemerken-gt' ); ?></option>
+				<option value="0"><?php _e( 'All categories &hellip;', 'hemerken' ); ?></option>
 				<?php foreach( $categories_2 as $category_2 ) { ?>
 					<option value="<?php echo esc_attr( $category_2->term_id ); ?>" <?php selected( $instance['cat_2'], $category_2->term_id ); ?>><?php echo esc_html( $category_2->name ); ?></option>
 				<?php } ?>
@@ -115,10 +115,10 @@ class hemerken_gt_Block_Three_Widget extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'cat_3' ); ?>"><?php _e( 'Choose category for column #3', 'hemerken-gt' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'cat_3' ); ?>"><?php _e( 'Choose category for column #3', 'hemerken' ); ?></label>
 			<select class="widefat" id="<?php echo $this->get_field_id( 'cat_3' ); ?>" name="<?php echo $this->get_field_name( 'cat_3' ); ?>" style="width:100%;">
 				<?php $categories_3 = get_terms( 'category' ); ?>
-				<option value="0"><?php _e( 'All categories &hellip;', 'hemerken-gt' ); ?></option>
+				<option value="0"><?php _e( 'All categories &hellip;', 'hemerken' ); ?></option>
 				<?php foreach( $categories_3 as $category_3 ) { ?>
 					<option value="<?php echo esc_attr( $category_3->term_id ); ?>" <?php selected( $instance['cat_3'], $category_3->term_id ); ?>><?php echo esc_html( $category_3->name ); ?></option>
 				<?php } ?>
@@ -127,7 +127,7 @@ class hemerken_gt_Block_Three_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'limit' ); ?>">
-				<?php _e( 'Number of posts to show', 'hemerken-gt' ); ?>
+				<?php _e( 'Number of posts to show', 'hemerken' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'limit' ); ?>" name="<?php echo $this->get_field_name( 'limit' ); ?>" type="number" step="1" min="0" value="<?php echo (int)( $instance['limit'] ); ?>" />
 		</p>

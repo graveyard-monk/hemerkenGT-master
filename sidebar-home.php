@@ -23,8 +23,8 @@
 <?php } else { ?>
 
 	<div class="widget">
-		<p><?php echo __('Please put widgets to the <strong>Homepage Sidebar</strong>', 'hemerken-gt'); ?></p>
-		<p><a href="<?php echo home_url(); ?>/wp-admin/widgets.php"><?php echo __('Ok, I\'m doing now &raquo;', 'hemerken-gt'); ?></a></p>
+		<p><?php echo __('Please put widgets to the <strong>Homepage Sidebar</strong>', 'hemerken'); ?></p>
+		<p><a href="<?php echo home_url(); ?>/wp-admin/widgets.php"><?php echo __('Ok, I\'m doing now &raquo;', 'hemerken'); ?></a></p>
 	</div>
 
 <?php } ?>

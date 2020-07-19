@@ -2,7 +2,7 @@
 /**
  * Home block one widget.
  *
- * @package    hemerken_gt
+ * @package    hemerkenGT
  * @author     GoblinThemes
  * @copyright  Copyright (c) 2020, GoblinThemes
  * @license    http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,13 +20,13 @@ class hemerken_gt_Block_One_Widget extends WP_Widget {
 		// Set up the widget options.
 		$widget_options = array(
 			'classname'   => 'widget-hemerken_gt-home-block-one',
-			'description' => __( 'Display one-column post blocks. Only use for the "Homepage Content" widget area.', 'hemerken-gt' )
+			'description' => __( 'Display one-column post blocks. Only use for the "Homepage Content" widget area.', 'hemerken' )
 		);
 
 		// Create the widget.
 		parent::__construct(
 			'goblin-home-block-one',          // $this->id_base
-			__( '&raquo; Home One Column', 'hemerken-gt' ), // $this->name
+			__( '&raquo; Home One Column', 'hemerken' ), // $this->name
 			$widget_options                    // $this->widget_options
 		);
 	}
@@ -126,16 +126,16 @@ class hemerken_gt_Block_One_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">
-				<?php _e( 'Title:', 'hemerken-gt' ); ?>
+				<?php _e( 'Title:', 'hemerken' ); ?>
 			</label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Choose category', 'hemerken-gt' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Choose category', 'hemerken' ); ?></label>
 			<select class="widefat" id="<?php echo $this->get_field_id( 'cat' ); ?>" name="<?php echo $this->get_field_name( 'cat' ); ?>" style="width:100%;">
 				<?php $categories = get_terms( 'category' ); ?>
-				<option value="0"><?php _e( 'All categories &hellip;', 'hemerken-gt' ); ?></option>
+				<option value="0"><?php _e( 'All categories &hellip;', 'hemerken' ); ?></option>
 				<?php foreach( $categories as $category ) { ?>
 					<option value="<?php echo esc_attr( $category->term_id ); ?>" <?php selected( $instance['cat'], $category->term_id ); ?>><?php echo esc_html( $category->name ); ?></option>
 				<?php } ?>
@@ -144,7 +144,7 @@ class hemerken_gt_Block_One_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'limit' ); ?>">
-				<?php _e( 'Number of posts to show', 'hemerken-gt' ); ?>
+				<?php _e( 'Number of posts to show', 'hemerken' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'limit' ); ?>" name="<?php echo $this->get_field_name( 'limit' ); ?>" type="number" step="1" min="0" value="<?php echo (int)( $instance['limit'] ); ?>" />
 		</p>		
