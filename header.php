@@ -23,7 +23,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site container">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hemerken' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hemerken_gt' ); ?></a>
 
 	<header id="masthead" class="site-header">
 	<nav id="menu" class="navbar navbar-expand-md navbar-light" role="navigation">
@@ -40,10 +40,10 @@
 				<?php
 			endif;
 
-			$hemerken_description = get_bloginfo( 'description', 'display' );
-			if ( $hemerken_description || is_customize_preview() ) :
+			$hemerken_gt_description = get_bloginfo( 'description', 'display' );
+			if ( $hemerken_gt_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $hemerken_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<p class="site-description"><?php echo $hemerken_gt_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 

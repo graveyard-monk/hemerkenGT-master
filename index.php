@@ -80,7 +80,7 @@ get_header();
 
 	<div class="notice">
 		<p><?php echo __('Put the "Home One/Two/Three Columns" widgets to the <strong>Homepage Content</strong> widget area.', 'hemerken-gt'); ?></p>
-		<p><a href="<?php echo home_url(); ?>/wp-admin/widgets.php"><?php echo __('Okay, I\'m doing now &raquo;', 'newsnow-pro'); ?></a>  | <a href="<?php echo get_template_directory_uri(); ?>/assets/img/how-to-home-widgets.png" target="_blank"><?php echo __('How To &raquo;', 'hemerken-gt'); ?></a></p>
+		<p><a href="<?php echo home_url(); ?>/wp-admin/widgets.php"><?php echo __('Ok, I\'m doing now &raquo;', 'hemerken-gt'); ?></a>  | <a href="<?php echo get_template_directory_uri(); ?>/assets/img/how-to-home-widgets.png" target="_blank"><?php echo __('How To &raquo;', 'hemerken-gt'); ?></a></p>
 	</div>
 
 <?php } ?>							
@@ -91,4 +91,5 @@ get_header();
 
 		</div><!-- #primary -->
 
-<?php get_footer();
+<?php get_template_part('sidebar', 'home'); ?>
+<?php get_footer(); ?>

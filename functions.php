@@ -147,7 +147,7 @@ function hemerken_gt_sidebar_init() {
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'hemerken-gt' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'right-sidebar',
 		'description'   => esc_html__( 'Add widgets here. Display on every pages.', 'hemerken-gt' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
@@ -163,7 +163,7 @@ function hemerken_gt_sidebar_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title"><span>',
 		'after_title'   => '</span></h2>',
-	) );
+		) );
 	
 	register_sidebar( array(
 		'name'          => esc_html__( 'Homepage Sidebar', 'hemerken-gt' ),
@@ -183,7 +183,7 @@ function hemerken_gt_sidebar_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title"><span>',
 		'after_title'   => '</span></h3>',
-	) );
+		) );
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Column 2', 'hemerken-gt' ),
@@ -193,7 +193,7 @@ function hemerken_gt_sidebar_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title"><span>',
 		'after_title'   => '</span></h3>',
-	) );
+		) );
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Column 3', 'hemerken-gt' ),
@@ -203,7 +203,7 @@ function hemerken_gt_sidebar_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title"><span>',
 		'after_title'   => '</span></h3>',
-	) );
+		) );
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Column 4', 'hemerken-gt' ),
@@ -213,7 +213,7 @@ function hemerken_gt_sidebar_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title"></span>',
 		'after_title'   => '</span></h3>',
-	) );
+		) );
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Header Advertisement', 'hemerken-gt' ),
@@ -223,7 +223,7 @@ function hemerken_gt_sidebar_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title"><span>',
 		'after_title'   => '</span></h3>',
-	) );
+		) );
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Content Advertisement', 'hemerken-gt' ),
@@ -233,19 +233,9 @@ function hemerken_gt_sidebar_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title"><span>',
 		'after_title'   => '</span></h3>',
-	) );
+		) );
 }
 add_action( 'widgets_init', 'hemerken_gt_sidebar_init' );
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
 
 /**
  * Enqueue scripts and styles.
@@ -306,6 +296,11 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/inc/extras.php';
+
+/**
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
@@ -313,7 +308,6 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Customizer additions.
  */
-
 
 require get_template_directory() . '/inc/customizer.php';
 
