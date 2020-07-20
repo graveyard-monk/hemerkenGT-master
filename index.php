@@ -108,9 +108,8 @@
 				} elseif  ( !$the_query->have_posts() && (!get_query_var('paged')) ) { // else has no featured posts
 			?>
 				<div class="notice">
-					<p><?php echo __('Please edit posts and set "Featured Posts" for this section.', 'newsnow-pro'); ?></p>
-					<p><a href="<?php echo home_url(); ?>/wp-admin/edit.php"><?php echo __('Okay, I\'m doing now &raquo;', 'newsnow-pro'); ?></a> | <a href="<?php echo get_template_directory_uri(); ?>/assets/img/how-to-featured.png" target="_blank"><?php echo __('How To &raquo;', 'newsnow-pro'); ?></a></p>
-				</div>
+					<p><?php echo __('Please edit posts and set "Featured Posts" for this section.', 'hemerken'); ?></p>
+    			</div>
 
 			<?php
 				} //end if has featured posts
@@ -186,7 +185,6 @@
 
 				<div class="notice">
 					<p><?php echo __('Put the "Home One/Two/Three Columns" widgets to the <strong>Homepage Content</strong> widget area.', 'hemerken'); ?></p>
-					<p><a href="<?php echo home_url(); ?>/wp-admin/widgets.php"><?php echo __('Okay, I\'m doing now &raquo;', 'hemerken'); ?></a>  | <a href="<?php echo get_template_directory_uri(); ?>/assets/img/how-to-home-widgets.png" target="_blank"><?php echo __('How To &raquo;', 'hemerken'); ?></a></p>
 				</div>
 
 			<?php } ?>							

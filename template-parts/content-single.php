@@ -9,8 +9,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header clear">
+
+
+<header class="entry-header clear">
 	
+
+
 		<div class="entry-category-icon"><?php hemerken_gt_first_category(); ?></div>
 
 		<?php

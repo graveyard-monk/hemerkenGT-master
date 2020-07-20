@@ -2,9 +2,9 @@
 /**
  * Two Columns widget.
  *
- * @package    hemerken_gt
+ * @package    hemerkenGT
  * @author     GoblinThemes
- * @copyright  Copyright (c) 2017, GoblinThemes
+ * @copyright  Copyright (c) 20120 GoblinThemes
  * @license    http://www.gnu.org/licenses/gpl-2.0.html
  * @since      1.0.0
  */
@@ -19,7 +19,7 @@ class hemerken_gt_Block_Two_Widget extends WP_Widget {
 
 		// Set up the widget options.
 		$widget_options = array(
-			'classname'   => 'widget-hemerken_gt-home-two-columns',
+			'classname'   => 'widget-hemerken-home-two-columns',
 			'description' => __( 'Display two-column post blocks. Only use for the "Homepage Content" widget area.', 'hemerken' )
 		);
 
@@ -131,7 +131,7 @@ class hemerken_gt_Block_Two_Widget extends WP_Widget {
 function hemerken_gt_home_posts_first( $args, $instance ) {
 
 	// Theme prefix
-	$prefix = 'hemerken_gt-';
+	$prefix = 'hemerken-';
 
 	// Pull the selected category.
 	$cat_id = isset( $instance['cat'] ) ? absint( $instance['cat'] ) : 0;
@@ -181,7 +181,7 @@ function hemerken_gt_home_posts_first( $args, $instance ) {
 function hemerken_gt_home_posts_second( $args, $instance ) {
 
 	// Theme prefix
-	$prefix = 'hemerken_gt-';
+	$prefix = 'hemerken-';
 
 	// Pull the selected category.
 	$cat_id = isset( $instance['cat_2'] ) ? absint( $instance['cat_2'] ) : 0;
