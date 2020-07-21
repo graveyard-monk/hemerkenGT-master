@@ -66,6 +66,6 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <div class="col-md-4">
-     <?php get_sidebar(); ?>
+	 <?php get_template_part('sidebar', 'home'); ?>
 </div>
 <?php get_footer();

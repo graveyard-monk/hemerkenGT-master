@@ -999,194 +999,7 @@ textarea {
 
 /* Featured Content
 --------------------------------------------- */
-.ribbon {
-	position: absolute;
-	left: -5px;
-	top: -5px;
-	z-index: 1;
-	overflow: hidden;
-	width: 75px;
-	height: 75px;
-	text-align: right;
-  }
-  
-  .ribbon span {
-	font-size: 10px;
-	font-weight: bold;
-	color: #FFF;
-	text-transform: uppercase;
-	text-align: center;
-	line-height: 20px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	width: 100px;
-	display: block;
-	background: #79A70A;
-	background: linear-gradient(#9BC90D 0%, #79A70A 100%);
-	box-shadow: 0 3px 10px -5px black;
-	position: absolute;
-	top: 19px;
-	left: -21px;
-  }
-  
-  .ribbon span::before {
-	content: "";
-	position: absolute;
-	left: 0px;
-	top: 100%;
-	z-index: -1;
-	border-left: 3px solid #79A70A;
-	border-right: 3px solid transparent;
-	border-bottom: 3px solid transparent;
-	border-top: 3px solid #79A70A;
-  }
-  
-  .ribbon span::after {
-	content: "";
-	position: absolute;
-	right: 0px;
-	top: 100%;
-	z-index: -1;
-	border-left: 3px solid transparent;
-	border-right: 3px solid #79A70A;
-	border-bottom: 3px solid transparent;
-	border-top: 3px solid #79A70A;
-  }
-  
-  .notice {
-	background-color: #f0f0f0;
-	padding: 30px;
-	text-align: center;
-  }
-  
-  #home-welcome {
-	margin-bottom: 25px;
-  }
-  
-  .gradient {
-	background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.65) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
-	bottom: 0;
-	content: "";
-	display: none;
-	height: 60%;
-	left: 0;
-	position: absolute;
-	width: 100%;
-	z-index: 2;
-  }
-  
-  #featured-content {
-	float: left;
-	width: 600px;
-	margin-right: 20px;
-	position: relative;
-  }
-  
-  #featured-content .featured-slide {
-	width: 100%;
-	margin-bottom: 15px;
-	position: relative;
-	line-height: 0.8;
-  }
-  
-  #featured-content .featured-slide .thumbnail-link {
-	display: block;
-	width: 100%;
-	height: 100%;
-  }
-  
-  #featured-content .featured-slide .entry-header {
-	width: 100%;
-	bottom: 0;
-	left: 0;
-	z-index: 10;
-	display: none;
-	text-align: left;
-	position: absolute;
-	right: 0;
-  }
-  
-  #featured-content .featured-slide .entry-title {
-	padding: 0 20px 20px 20px;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-  }
-  
-  #featured-content .featured-slide .entry-title a {
-	color: #fff;
-	font-size: 24px;
-	line-height: 1.25;
-  }
-  
-  #featured-content .featured-square {
-	float: left;
-	margin: 0 15px 0 0;
-	width: 190px;
-  }
-  
-  #featured-content .featured-square.last {
-	margin-right: 0;
-  }
-  
-  #featured-content .featured-square .thumbnail-link {
-	display: block;
-	line-height: 0.8;
-	margin: 0 0 10px 0;
-  }
-  
-  #featured-content .featured-square .entry-title {
-	font-size: 15px;
-  }
-  
-  .more-button a,
-  .more-button a:hover {
-	display: inline-block;
-	font-size: 14px;
-	height: 34px;
-	line-height: 34px;
-	padding: 0 15px;
-	text-transform: uppercase;
-  }
-  
-  #latest-content {
-	background-color: #f0f0f0;
-	float: left;
-	padding: 15px 15px 25px 15px;
-	width: 260px;
-  }
-  
-  #latest-content h3 {
-	border-bottom: 1px dashed #bbb;
-	font-size: 18px;
-	margin-bottom: 15px;
-	padding-bottom: 12px;
-	text-align: center;
-	text-transform: uppercase;
-  }
-  
-  #latest-content .hentry {
-	border-bottom: 1px dashed #bbb;
-	padding-bottom: 15px;
-	margin-bottom: 15px;
-  }
-  
-  #latest-content .hentry.last {
-	margin-bottom: 20px;
-  }
-  
-  #latest-content .entry-title {
-	font-weight: normal;
-	line-height: 1.4;
-  }
-  
-  #latest-content .entry-title a {
-	font-size: 15px;
-  }
-  
-  #latest-content .more-button {
-	text-align: center;
-  }
-  
+
   #recent-content {
 	position: relative;
   }
@@ -1379,18 +1192,18 @@ textarea {
   
   .content-block-3 .block-left {
 	float: left;
-	width: 280px;
+	width: 230px;
   }
   
   .content-block-3 .block-middle {
 	float: left;
-	width: 280px;
+	width: 230px;
 	margin-left: 20px;
   }
   
   .content-block-3 .block-right {
 	float: right;
-	width: 280px;
+	width: 230px;
   }
   
   .breadcrumbs {

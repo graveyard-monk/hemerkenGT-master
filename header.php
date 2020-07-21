@@ -23,7 +23,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site container">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hemerken_gt' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hemerken' ); ?></a>
 
 	<header id="masthead" class="site-header">
 	<nav id="menu" class="navbar navbar-expand-md navbar-light" role="navigation">
@@ -67,5 +67,11 @@
 	?>
 	</nav>
 </header><!-- #masthead -->
+
+<?php
+		if(is_home()) {
+			get_template_part('template-parts/content','featured');
+		}
+	?>
 
 <div id="content" class="site-content row">
