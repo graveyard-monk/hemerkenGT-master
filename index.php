@@ -26,10 +26,9 @@ get_header(); ?>
 
 <?php } ?>							
 
-</div><!-- #recent-content -->		
-
-
-		<?php
+</div><!-- #recent-content -->	
+	
+<?php
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :

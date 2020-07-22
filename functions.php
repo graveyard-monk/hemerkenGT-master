@@ -175,9 +175,11 @@ function hemerken_gt_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'hemerken_gt_scripts' );
 
-/**
- * Post Thumbnails.
- */
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
 if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)

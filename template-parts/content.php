@@ -29,10 +29,10 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php hemerken_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
+
+if (is_single()) {
 		the_content(
 			sprintf(
 				wp_kses(
@@ -44,9 +44,11 @@
 						),
 					)
 				),
-				wp_kses_post( get_the_title() )
-			)
-		);
+				get_the_title()
+				) );
+			}else{
+			the_excerpt();	
+			}
 
 		wp_link_pages(
 			array(

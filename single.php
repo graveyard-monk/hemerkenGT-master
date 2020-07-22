@@ -17,6 +17,12 @@ endif;
 <div id="primary" class="content-area col-md-8">
 	<main id="main" class="site-main">
 
+	<?php if ( has_post_thumbnail() ) : ?>
+		<div class="dmbs-post-featured-image">
+              <?php the_post_thumbnail('featured', array('class' => 'card-img-top')); ?>
+        </div>
+    <?php endif; ?>
+
 		<?php
 		while ( have_posts() ) :
 			the_post();
