@@ -15,6 +15,17 @@ endif;
 ?>
 
 <div id="primary" class="content-area col-md-8">
+
+<div class="breadcrumbs">
+			<span class="breadcrumbs-nav">
+				<span class="here"><?php esc_html_e('You are here:', 'hemerken'); ?></span>
+				<span class="divider"></span>
+				<a href="<?php echo home_url(); ?>"><?php esc_html_e('Home', 'hemerken-gt'); ?></a>
+				<span class="divider"></span>
+				<span class="post-category"><?php hemerken_first_category(); ?></span>
+			</span>
+		</div>
+
 	<main id="main" class="site-main">
 
 	<?php if ( has_post_thumbnail() ) : ?>

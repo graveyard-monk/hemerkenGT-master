@@ -15,7 +15,7 @@
 	<div class="entry-header">
 
 		<?php if ( !is_category() ) : ?>
-			<div class="entry-category-icon"><?php hemerken_gt_first_category(); ?></div>
+			<div class="entry-category-icon"><?php hemerken_first_category(); ?></div>
 		<?php endif; ?>
 
 		<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

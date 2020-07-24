@@ -222,3 +222,15 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+/**
+ * Display the first (single) category of post.
+ */
+if ( ! function_exists( 'hemerken_first_category' ) ) :
+	function hemerken_first_category() {
+		$category = get_the_category();
+		if ($category) {
+		  echo '<a href="' . get_category_link( $category[0]->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'hemerken-gt' ), $category[0]->name ) . '" ' . '>' . $category[0]->name.'</a> ';
+		}    
+	}
+	endif;

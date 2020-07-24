@@ -37,7 +37,7 @@
 
 	<div class="entry-content">
 		<?php 
-			if ( has_post_thumbnail() && ( get_theme_mod('single-featured-on', false) == true ) ) :
+			if ( has_post_thumbnail() && ( get_theme_mod('single-featured-on', true) == true ) ) :
 				the_post_thumbnail('single_thumb'); 
 			endif;
 		?>	
@@ -100,7 +100,7 @@
 				'operator' => 'IN'
 			)
 		),
-		'posts_per_page' => 4,
+		'posts_per_page' => 6,
 		'post_type'      => 'post',
 	);
 
