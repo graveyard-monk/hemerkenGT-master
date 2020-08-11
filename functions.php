@@ -183,8 +183,8 @@ add_action( 'wp_enqueue_scripts', 'hemerken_gt_scripts' );
 if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
-	add_image_size( 'featured_large_thumb', 720, 480, true ); // 600 * 400
-	add_image_size( 'featured_small_thumb', 266, 218, true );
+	add_image_size( 'featured_large_thumb', 600, 400, true ); // 600 * 400
+	add_image_size( 'featured_small_thumb', 266, 188, true ); // 266 * 218
 	add_image_size( 'block_large_thumb', 600, 400, true ); // 430 * 287
 	add_image_size( 'block_medium_thumb', 246, 164, true ); 
 	add_image_size( 'block_small_thumb', 120, 80, true );

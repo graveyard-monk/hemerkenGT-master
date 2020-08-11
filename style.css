@@ -1027,7 +1027,7 @@ textarea {
   #featured-content {
 	position: relative;
 	margin-top: 25px;
-	margin-bottom: -4px;
+	margin-bottom: 0px;
   }
   
   #featured-content .wp-post-image {
@@ -1048,7 +1048,7 @@ textarea {
   #featured-content .featured-small {
 	float: left;
 	width: 22.5%;
-	height: 218px;
+	height: 188px;
 	overflow: hidden;
 	padding-left: 4px;
 	margin-bottom: 4px;
@@ -1192,7 +1192,7 @@ textarea {
   
   .content-block-1 .post-big {
 	float: left;
-	width: 350px;
+	width: 330px;
   }
   
   .content-block-1 .post-big .thumbnail-link {
@@ -1208,7 +1208,7 @@ textarea {
   .content-block-1 .post-small {
 	border-bottom: 1px solid #e6e6e6;
 	float: right;
-	width: 350px;
+	width: 330px;
 	margin: 0 0 16px 0;
 	padding: 0 0 16px 0;
   }
@@ -1268,12 +1268,12 @@ textarea {
   
   .content-block-2 .block-left {
 	float: left;
-	width: 350px;
+	width: 330px;
   }
   
   .content-block-2 .block-right {
 	float: right;
-	width: 350px;
+	width: 330px;
   }
   
   .content-block-3 .post-big {
@@ -1306,18 +1306,18 @@ textarea {
   
   .content-block-3 .block-left {
 	float: left;
-	width: 230px;
+	width: 210px;
   }
   
   .content-block-3 .block-middle {
 	float: left;
-	width: 230px;
+	width: 210px;
 	margin-left: 20px;
   }
   
   .content-block-3 .block-right {
 	float: right;
-	width: 230px;
+	width: 225px;
   }
   
   .breadcrumbs {

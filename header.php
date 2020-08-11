@@ -26,8 +26,7 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hemerken' ); ?></a>
 
 	<header id="masthead" class="site-header">
-	<nav id="menu" class="navbar navbar-expand-md navbar-light" role="navigation">
-		<div class="site-branding navbar-brand">
+	<div class="site-branding navbar-brand">
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
@@ -47,7 +46,9 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+	<nav id="menu" class="navbar navbar-expand-lg navbar-dark bg-dark navbar-nav col-12" role="navigation">
+
+		<button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse"
 	data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
 	<span class="navbar-toggler-icon"></span>
 	</button>
@@ -59,7 +60,7 @@
 		'container_id'			=>'bs4navbar',
 		'container_class'		=>'collapse navbar-collapse',
 		'menu_id'				=>'main-menu',
-		'menu_class'			=>'navbar-nav ml-auto',
+		'menu_class'			=>'navbar-nav',
 		'depth'					=> 2,
 		'fallback_cb'			=>'bs4navwalker::fallback',
 		'walker'				=> new bs4navwalker()

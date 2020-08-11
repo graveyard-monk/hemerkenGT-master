@@ -37,7 +37,7 @@
 					if ( has_post_thumbnail() ) {
 						the_post_thumbnail('featured_large_thumb');  
 					} else {
-						echo '<img src="' . get_template_directory_uri() . '/assets/img/featured-large-thumb.png" alt="" />';
+						echo '<img src="' . get_template_directory_uri() . '/assets/img/no-featured.png" alt="" />';
 					}
 					?>
 				</div><!-- .thumbnail-wrap -->
